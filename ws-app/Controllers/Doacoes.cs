@@ -4,7 +4,8 @@ using ws_app.Connection;
 
 namespace ws_app.Controllers
 {
-    public class Doacoes
+    [RoutePrefix("api/doacao")]
+    public class doacaoController : ApiController
     {
         [AcceptVerbs("POST")]
         [Route("retornaDoacoes")]

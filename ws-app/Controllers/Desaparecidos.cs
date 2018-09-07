@@ -4,6 +4,7 @@ using ws_app.Connection;
 
 namespace ws_app.Controllers
 {
+    [RoutePrefix("api/desaparecido")]
     public class Desaparecidos
     {
         [AcceptVerbs("POST")]

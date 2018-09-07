@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using ws_app.Models;
 using ws_app.Connection;
 
@@ -8,8 +10,7 @@ namespace ws_app.Controllers
     public class cadastroController : ApiController
     {
 
-        [AcceptVerbs("POST")]
-        [Route("gravarUsuario")]
+        [HttpPost]
         public string gravarUsuario(UsuarioCadastrar usuario)
         {
             Parametrizar Parametros = new Parametrizar(19);
@@ -36,9 +37,8 @@ namespace ws_app.Controllers
             
             return ConnectionDB.executarProcedure("Proc_GravarUsuario", Parametros.ObterParametros(), Parametros.getQuantidade(),"string").ToString();
         }
-        
-        [AcceptVerbs("POST")]
-        [Route("gravarCategoria")]
+
+        [HttpPost]
         public string gravarCategoria(CategoriaCadastrar categoria)
         {
             Parametrizar Parametros = new Parametrizar(3);
@@ -49,9 +49,8 @@ namespace ws_app.Controllers
 
             return ConnectionDB.executarProcedure("Proc_GravarCategoria", Parametros.ObterParametros(), Parametros.getQuantidade(), "string").ToString();
         }
-        
-        [AcceptVerbs("POST")]
-        [Route("gravarTipoCategoria")]
+
+        [HttpPost]
         public string gravarTipoCategoria(TipoCategoriaCadastrar categoria)
         {
             Parametrizar Parametros = new Parametrizar(4);
@@ -63,9 +62,8 @@ namespace ws_app.Controllers
 
             return ConnectionDB.executarProcedure("Proc_GravarTipoCategoria", Parametros.ObterParametros(), Parametros.getQuantidade(), "string").ToString();
         }
-        
-        [AcceptVerbs("POST")]
-        [Route("gravarPets")]
+
+        [HttpPost]
         public string gravarPets(PetsCadastrar pets)
         {
             Parametrizar Parametros = new Parametrizar(9);

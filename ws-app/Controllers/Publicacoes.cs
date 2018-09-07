@@ -4,7 +4,8 @@ using ws_app.Connection;
 
 namespace ws_app.Controllers
 {
-    public class Publicacoes
+    [RoutePrefix("api/publicacao")]
+    public class publicacaoController : ApiController
     {
         [AcceptVerbs("POST")]
         [Route("gravarPublicacao")]
