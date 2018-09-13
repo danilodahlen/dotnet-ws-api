@@ -1,15 +1,19 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using ws_app.Models;
 using ws_app.Connection;
 
 namespace ws_app.Controllers
 {
+    
+
     [RoutePrefix("api/cadastro")]
     public class cadastroController : ApiController
     {
-
+        
         [HttpPost]
         public string gravarUsuario(UsuarioCadastrar usuario)
         {
@@ -17,7 +21,7 @@ namespace ws_app.Controllers
 
             Parametros.AddParam("id_usuario", usuario.id_usuario, "string");
             Parametros.AddParam("nome_usuario ", usuario.nome_usuario, "string");
-            Parametros.AddParam("apelido_usuario", usuario.apelido, "string");
+            Parametros.AddParam("apelido_usuario", usuario.apelido_usuario, "string");
             Parametros.AddParam("data_nascimento", usuario.data_nascimento, "date");
             Parametros.AddParam("email_usuario", usuario.email_usuario, "string");
             Parametros.AddParam("email_usuario_2", usuario.email_usuario_2, "string");

@@ -9,7 +9,7 @@ namespace ws_app.Models
     {
         public string id_usuario { get; set; }
         public string nome_usuario { get; set; }
-        public string apelido { get; set; }
+        public string apelido_usuario { get; set; }
         public string data_nascimento { get; set; }
         public string email_usuario { get; set; }
         public string email_usuario_2 { get; set; }
@@ -32,10 +32,10 @@ namespace ws_app.Models
     {
         public string id_categoria { get; set; }
         public string nome_categoria { get; set; }
+        public string marketplace { get; set; }
         public string operacao { get; set; }
     }
-
-
+    
     public class TipoCategoriaCadastrar
     {
         public string id_categoria { get; set; }

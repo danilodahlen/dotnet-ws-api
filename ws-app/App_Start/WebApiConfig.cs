@@ -14,7 +14,8 @@ namespace ws_app
         public static void Register(HttpConfiguration config)
         {
             var cors = new EnableCorsAttribute("*", "*", "*");
-            config.MapHttpAttributeRoutes();
+            config.EnableCors();
+            config.MapHttpAttributeRoutes();    
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
